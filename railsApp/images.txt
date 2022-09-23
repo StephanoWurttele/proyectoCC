@@ -1,0 +1,13 @@
+REPOSITORY                                TAG                  IMAGE ID       CREATED          SIZE
+stephanofw/rub-rails-exa                  pr1                  6726aaf661f4   12 minutes ago   1.12GB
+stephanofw/kub-rails-exa                  pr1                  03fb78acb381   21 hours ago     1.12GB
+ruby                                      3.1                  a8869ff70dfe   9 days ago       893MB
+kindest/kindnetd                          v20220726-ed811e41   d921cee84948   8 weeks ago      61.8MB
+k8s.gcr.io/kube-apiserver                 v1.22.3              53224b502ea4   11 months ago    128MB
+k8s.gcr.io/kube-controller-manager        v1.22.3              05c905cef780   11 months ago    122MB
+k8s.gcr.io/kube-scheduler                 v1.22.3              0aa9c7e31d30   11 months ago    52.7MB
+k8s.gcr.io/kube-proxy                     v1.22.3              6120bd723dce   11 months ago    104MB
+k8s.gcr.io/etcd                           3.5.0-0              004811815584   15 months ago    295MB
+k8s.gcr.io/coredns/coredns                v1.8.4               8d147537fb7d   16 months ago    47.6MB
+gcr.io/k8s-minikube/storage-provisioner   v5                   6e38f40d628d   18 months ago    31.5MB
+k8s.gcr.io/pause                          3.5                  ed210e3e4a5b   18 months ago    683kB
