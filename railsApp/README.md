@@ -29,6 +29,6 @@ To deploy in multinode, follow the commands as shown in the `multinode.sh` file,
 3. Look at minikube's image list with `minikube image ls`
 4. Run `kubectl apply -f config/kube` to apply configuration with recently created image and port configuration
 5. Check results with `kubectl get nodes` and `kubectl get pods -owide` and check running server status with `kubect logs <pod>`
-6. Run `kubectl get svc` and copy the EXTERNAL-IP for rails-deployment
-7. Connect to Rails server by entering `EXTERNAL-IP:8080`
-
+6. Run `minikube tunnel` in a separate terminal, as it will run continuously. This will configure an accessible port by building a tunnel between the container's network and the host's, fixing an 'EXTERNAL-IP pending' problem.
+7. Run `kubectl get svc` and copy the EXTERNAL-IP for rails-deployment
+8. Connect to Rails server by entering `EXTERNAL-IP:8080`
