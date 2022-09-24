@@ -12,7 +12,9 @@ Elastic stack es una tecnologia que usa Elasticsearch, Logstash, Kibana y Beats 
 
 El primer componete que tiene contacto con el servidor es Beats, un agente que se encarga de enviar los datos a el servidor de recoleccion (Elasticsearch o Logstash). Este agente se configura para enviar los distintos tipos de eventos. Despues se encuentra Logstash, este componente se encarga del parseado y transformacion de los datos. Por otro lado, estos datos son enviados a Elasticsearch el motor de busqueda y analitica de datos. Finalmente, Kibana se encarga de la visualizacion de los datos.
 
-![Arquitectura de Elactic Stack](/images/architecture.png)
+
+![Arquitectura de Elactic Stack](./images/architecture.png)
+
 
 ## Funcionalidad
 
