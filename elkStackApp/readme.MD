@@ -1,16 +1,16 @@
 # Elastic Stack
-Elastic stack es una tecnologia que usa Elasticsearch, Logstash, Kibana y Beats para el monitoreo, analisis y visualizacion de datos a escala. Esta tecnologia puede ser usada para multiples propositos y uno de los principales es el usos es como SIEM en equipos de seguridad. Algunas de sus caracteristicas mas relevantes son:
+Elastic stack es una tecnología que usa Elasticsearch, Logstash, Kibana y Beats para el monitoreo, análisis y visualización de datos a escala. Esta tecnología puede ser usada para múltiples propósitos y uno de los principales es el de SIEM en equipos de seguridad. Algunas de sus características más relevantes son:
 	- Escalamiento Horizontal
-	- Cluster y alta disponibilidad
-	- Monitoreo y alerta en multiples partes del stack
-	- Multiple tipos de datos 
-	- Compatible con multiples sistema operativos
-	- Recoleccion de datos de red, sistema y de seguridad.
-	- etc
+	- Clúster y alta disponibilidad
+	- Monitoreo y alerta en múltiples partes del stack
+	- Múltiples tipos de datos 
+	- Compatible con múltiples sistemas operativos
+	- Recolección de datos de red, sistema y de seguridad.
+	- etc.
 
 ## Arquitectura
 
-El primer componete que tiene contacto con el servidor es Beats, un agente que se encarga de enviar los datos a el servidor de recoleccion (Elasticsearch o Logstash). Este agente se configura para enviar los distintos tipos de eventos. Despues se encuentra Logstash, este componente se encarga del parseado y transformacion de los datos. Por otro lado, estos datos son enviados a Elasticsearch el motor de busqueda y analitica de datos. Finalmente, Kibana se encarga de la visualizacion de los datos.
+El primer componente que tiene contacto con el servidor es Beats, un agente que se encarga de enviar los datos al servidor de recolección (Elasticsearch o Logstash). Este agente se configura para enviar los distintos tipos de eventos. Después se encuentra Logstash, este componente se encarga del parseado y transformación de los datos. Por otro lado, estos datos son enviados a Elasticsearch, el motor de búsqueda y analítica de datos. Finalmente, Kibana se encarga de la visualización de los datos.
 
 
 ![Arquitectura de Elactic Stack](./images/architecture.png)
@@ -18,9 +18,9 @@ El primer componete que tiene contacto con el servidor es Beats, un agente que s
 
 ## Funcionalidad
 
-El caso de uso para este proyecto es el de SIEM (Security Information and Event Management) en este caso los agentes Beats recolectan datos de seguridad como eventos de sistema de Windows y Linux. Estos eventos son procesados para identificar comportamientos anomalos o para su analisis en respuesta de incidentes de ciberseguridad.
+El caso de uso para este proyecto es el de SIEM (Security Information and Event Management) en este caso los agentes Beats recolectan datos de seguridad como eventos de sistema de Windows y Linux. Estos eventos son procesados para identificar comportamientos anómalos o para su análisis en respuesta de incidentes de ciberseguridad.
 
-## Despliege
+## Despliegue
 
 Para el despliegue se usan los siguientes comandos:
 	
@@ -34,4 +34,3 @@ Para el despliegue se usan los siguientes comandos:
 8. curl http://localhost:9200/_cat/indices
 9. helm install kibana elastic/kibana
 10. kubectl port-forward svc/kibana-kibana 5601:5601
-11.  
