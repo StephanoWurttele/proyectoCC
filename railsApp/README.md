@@ -1,23 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
+This is a Ruby on Rails application that works as a template for deployment of a Web Application. It is currently built on Ruby on Rails 7, and has a Dockerfile that installs all prerequisites into a container. After the steps of deployment are complete, a user should be able to access the Web Application, hosted on Kubernetes, from their prefered Web Browser.
 
 ## Deployment instructions
 
