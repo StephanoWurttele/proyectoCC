@@ -34,3 +34,5 @@ Para el despliegue se usan los siguientes comandos:
 8. curl http://localhost:9200/_cat/indices
 9. helm install kibana elastic/kibana
 10. kubectl port-forward svc/kibana-kibana 5601:5601
+
+[Link a tutorua](https://www.linode.com/docs/guides/how-to-deploy-the-elastic-stack-on-kubernetes/)
