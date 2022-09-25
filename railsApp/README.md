@@ -1,4 +1,4 @@
-# README
+# Rais Application Deployment
 
 This is a Ruby on Rails application that works as a template for deployment of a Web Application. It is currently built on Ruby on Rails 7, and has a Dockerfile that installs all prerequisites into a container. After the steps of deployment are complete, a user should be able to access the Web Application, hosted on Kubernetes, from their prefered Web Browser.
 
