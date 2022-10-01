@@ -2,6 +2,17 @@
 
 This is a Ruby on Rails application that works as a template for deployment of a Web Application. It is currently built on Ruby on Rails 7, and has a Dockerfile that installs all prerequisites into a container. After the steps of deployment are complete, a user should be able to access the Web Application, hosted on Kubernetes, from their prefered Web Browser.
 
+## Architecture
+
+For the rails application created and the image created for the Dockerfiles, the entire's app architecture is replicated three times. Ideally, one will be placed in each node, in order to act as a backup or help for the redistribution of tasks. For future work, a system should be made in which the three apps connect to the same database so that data is congruent across all nodes.
+
+
+![Arquitectura de Elactic Stack](./images/arch.png)
+
+## Functionality
+As for now, the Ruby on Rails app is an empty vessel for any sort of web application that can be thought of. As such, the landing page contains a Hello World text, and more routes can be added to extend the functionality. It has a database as well, with which the application can communicate to store any information as long as an endpoint is implemented for it.
+
+
 ## Deployment instructions
 
 A change was done in the deployment.yaml file, adding "imagePullPolicy: Never". 
