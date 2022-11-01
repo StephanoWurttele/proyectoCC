@@ -348,7 +348,7 @@ networkPolicy:
     #             - frontend
 
 tests:
-  enabled: true
+  enabled: false
 
 # Deprecated
 # please use the above podSecurityContext.fsGroup instead
