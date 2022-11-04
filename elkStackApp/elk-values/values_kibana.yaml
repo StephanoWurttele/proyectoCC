@@ -64,8 +64,10 @@ healthCheckPath: "/app/kibana"
 
 # Allows you to add any config files in /usr/share/kibana/config/
 # such as kibana.yml
-kibanaConfig: {}
-#   kibana.yml: |
+kibanaConfig:
+   kibana.yml: |
+     elasticsearch.username: "kibana_system"
+     elasticsearch.password: "1q2w3e4r"
 #     key:
 #       nestedkey: value
 
