@@ -42,6 +42,8 @@ daemonset:
       output.elasticsearch:
         host: '${NODE_NAME}'
         hosts: '${ELASTICSEARCH_HOSTS:elasticsearch-master-0:9200}'
+        username: 'beats_system'
+        password: '1q2w3e4r'
   # Only used when updateStrategy is set to "RollingUpdate"
   maxUnavailable: 1
   nodeSelector: {}
