@@ -28,7 +28,7 @@ Para el despliegue se usan los siguientes comandos:
 2. helm repo update
 3. helm search hub elasticsearch
 4. helm install elasticsearch elastic/elasticsearch -f values_elastic.yml
-5. kubectl port-forward svc/elasticsearch-master 9200:9200
+5. kubectl port-forward svc/elasticsearch-master 9200:9200 --address='0.0.0.0'
 6. curl http://localhost:9200/
 7. helm install filebeat elastic/filebeat -f values_filebeat.yml
 8. curl http://localhost:9200/_cat/indices
