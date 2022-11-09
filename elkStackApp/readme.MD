@@ -23,16 +23,34 @@ El caso de uso para este proyecto es el de SIEM (Security Information and Event 
 ## Despliegue
 
 Para el despliegue se usan los siguientes comandos:
-	
-1. helm repo add elastic https://helm.elastic.co
-2. helm repo update
-3. helm search hub elasticsearch
-4. helm install elasticsearch elastic/elasticsearch -f values_elastic.yml
-5. kubectl port-forward svc/elasticsearch-master 9200:9200 --address='0.0.0.0'
-6. curl http://localhost:9200/
-7. helm install filebeat elastic/filebeat -f values_filebeat.yml
-8. curl http://localhost:9200/_cat/indices
-9. helm install kibana elastic/kibana
-10. kubectl port-forward svc/kibana-kibana 5601:5601
+### Elastic ṕod	
+1. ```helm repo add elastic https://helm.elastic.co```
+2. ```helm repo update```
+3. ```helm search hub elasticsearch```
+4. ```helm install elasticsearch elastic/elasticsearch -f values_elastic.yaml```
+5. ```kubectl port-forward svc/elasticsearch-master 9200:9200 --address='0.0.0.0'```
 
-[Link a tutoria](https://www.linode.com/docs/guides/how-to-deploy-the-elastic-stack-on-kubernetes/)
+### Definir credenciales de elastic
+1. ```cd bin```
+2. ```./elasticsearch-setup-passwords interactive```
+3. Definir contraseñas para cada servicio. Importante no olvidarlas, pues de ser así deberá creerse el pod nuevamente.
+
+### Filebeat ṕod
+1. ```curl http://localhost:9200/ -u <user>:<password>```
+2. ```helm install filebeat elastic/filebeat -f values_filebeat.yaml```
+3. ```curl http://localhost:9200/_cat/indices -u <user>:<password>```
+### Kibana ṕod
+1. helm install kibana elastic/kibana
+2. kubectl port-forward svc/kibana-kibana 5601:5601
+### Configurar cowrie
+1. Iniciar una VM e [instalar cowrie](https://cowrie.readthedocs.io/en/latest/INSTALL.html)
+2. Ingresar a ```cowrie/var/log/cowrie```
+3. Descargar [Elastic Agent](https://www.elastic.co/downloads/past-releases/elastic-agent-7-17-3) y descomprimir en esa carpeta
+4. Ingresar a carpeta descomprimida y ejecutar ```./elastic-agent install```
+5. Copiar dirección de archivo cowrie.log para siguiente paso
+### Añadir custom log para recibir de cowrie
+1. Ingresar a Add Integrations y elegir [Custom Logs](http://localhost:5601/app/fleet/integrations/log-1.1.0/add-integration)
+2. Integration name: cowriw
+3. Llenar log file path con direccion de cowrie.log
+
+[Link a tutorial](https://www.linode.com/docs/guides/how-to-deploy-the-elastic-stack-on-kubernetes/)
