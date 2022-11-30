@@ -27,7 +27,7 @@ Para el despliegue se usan los siguientes comandos:
 1. ```helm repo add elastic https://helm.elastic.co```
 2. ```helm repo update```
 3. ```helm search hub elasticsearch```
-4. ```helm install elasticsearch elastic/elasticsearch -f values_elastic.yaml```
+4. ```helm install elasticsearch --version 7.17.3 elastic/elasticsearch -f values_elastic.yaml```
 5. ```kubectl port-forward svc/elasticsearch-master 9200:9200 --address='0.0.0.0'```
 
 ### Definir credenciales de elastic
@@ -38,10 +38,10 @@ Para el despliegue se usan los siguientes comandos:
 
 ### Filebeat pod
 1. ```curl http://localhost:9200/ -u <user>:<password>```
-2. ```helm install filebeat elastic/filebeat -f values_filebeat.yaml```
+2. ```helm install filebeat --version 7.17.3 elastic/filebeat -f values_filebeat.yaml```
 3. ```curl http://localhost:9200/_cat/indices -u <user>:<password>```
 ### Kibana pod
-1. ```helm install kibana elastic/kibana```
+1. ```helm install kibana --version 7.17.3 elastic/kibana```
 2. ```kubectl port-forward svc/kibana-kibana 5601:5601```
 ### Configurar cowrie
 1. Iniciar una VM e [instalar cowrie](https://cowrie.readthedocs.io/en/latest/INSTALL.html)
