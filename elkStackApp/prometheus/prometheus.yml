@@ -6,9 +6,6 @@ global:
     external_labels:
         monitor: 'lambda-monitor'
 scrape_configs:
-    - job_name: 'docker'
-      target_groups:
-          - targets: ['host.docker.internal:9841']
     - job_name: 'eexporter'
-      target_groups:
-          - targets: ['host.docker.internal:9108']
+      static_configs:
+          - targets: ['192.168.1.39:9108']
