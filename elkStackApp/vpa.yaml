@@ -5,7 +5,7 @@ metadata:
 spec:
   targetRef:
     apiVersion: "apps/v1"
-    kind:       Deployment
-    name:       kibana-kibana
+    kind:       StatefulSet
+    name:       elasticsearch-master
   updatePolicy:
     updateMode: "Auto"
