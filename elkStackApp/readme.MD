@@ -63,8 +63,9 @@ Para el despliegue se usan los siguientes comandos:
 
 # Autoscaling
 ## Autoscaler de Kubernetes
-La herramienta `metrics-server` de Kubernetes fue utilizada para realizar la lectura de información y estado del contenedor. Esto fue habilitado usando
+La herramienta `metrics-server` de Kubernetes fue utilizada para realizar la lectura de información y estado del contenedor. Esto fue habilitado usando:
 ```minikube addons enable metrics-server```
+
 Luego se tuve que instalar el autoscaler desde el repositorio de kubernetes, encontrado en este [repositorio](https://github.com/kubernetes/autoscaler).
 Aqui se ejecuto el `vpa-up.sh` del repositorio en la carpeta `vertical-pod-autoscaler/hack`, para hacer escalado vertical. Con ello, instalamos el autoscaler en los pods actuales, y se utilizo el vpa.yaml para construir un vpa que observe el StatefulSet de elasticsearch. Notar que se configuro `updateMode: "Off"`, para que los cambios no se apliquen automaticamente. Se puede colocar `"Auto"` para que la modificacion de los recursos se realice automaticamente, y se debe tener cuidado con esta opción en un deployment pagado.
 Las sugerencias de auto escalado con las que se puede cambiar los límites de memoria se pueden ver ejecutando:
