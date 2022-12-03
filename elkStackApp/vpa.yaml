@@ -8,4 +8,4 @@ spec:
     kind:       StatefulSet
     name:       elasticsearch-master
   updatePolicy:
-    updateMode: "Auto"
+    updateMode: "Off"
