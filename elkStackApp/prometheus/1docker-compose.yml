@@ -1,18 +1,17 @@
 services:
     prometheus:
-        image: prom/prometheus:latest
-        user: root
+        image: prom/prometheus:0.18.0
         container_name: prometheus
         volumes:
             - ./prometheus.yml:/etc/prometheus/prometheus.yml
         command:
-            - '--config.file=/etc/prometheus/prometheus.yml'
+            - '-config.file=/etc/prometheus/prometheus.yml'
         ports:
             - '9090:9090'
 
 
     grafana:
-        image: grafana/grafana:latest
+        image: grafana/grafana:6.1.6
         container_name: grafana
         environment:
             - GF_SECURITY_ADMIN_PASSWORD=pass
@@ -24,9 +23,12 @@ services:
 
     eexporter:
         container_name: eexporter
-        image: justwatch/elasticsearch_exporter:1.0.2
-        command:
-            - 'es.uri=192.168.1.39:9200'
+        image: erangaeb/elasticsearch-exporter:0.1
+        environment:
+            - ES_URI=http://host.docker.internal:9200
+            - ETCD_URI=http://host.docker.internal:2379
+            - ETCD_KEY=prometheus-exporter/node
+            - HOST_IP=172.12.0.4
         restart: always
         ports:
             - "9108:9108"

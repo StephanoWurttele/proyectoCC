@@ -8,7 +8,7 @@ replicas: 1
 # syntax here
 extraEnvs:
   - name: "NODE_OPTIONS"
-    value: "--max-old-space-size=1800"
+  value: "--max-old-space-size=1800"
 
 
 #  - name: MY_ENVIRONMENT_VAR
@@ -49,12 +49,12 @@ podAnnotations: {}
 # iam.amazonaws.com/role: es-cluster
 
 resources:
-  requests:
-    cpu: "1000m"
-    memory: "2Gi"
-  limits:
-    cpu: "1000m"
-    memory: "2Gi"
+requests:
+  cpu: "1000m"
+  memory: "2Gi"
+limits:
+  cpu: "1000m"
+  memory: "2Gi"
 
 protocol: http
 
